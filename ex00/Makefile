@@ -6,11 +6,11 @@
 #    By: ohertzbe <ohertzbe@student.hive.fi>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/06/24 19:38:04 by ohertzbe          #+#    #+#              #
-#    Updated: 2024/06/24 22:01:46 by ohertzbe         ###   ########.fr        #
+#    Updated: 2024/06/24 22:14:54 by ohertzbe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Canonical
+NAME = a.out
 CC = c++
 CFLAGS = -Wall -Wextra -Werror
 SRC = main.cpp Fixed.cpp
