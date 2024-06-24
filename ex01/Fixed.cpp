@@ -6,7 +6,7 @@
 /*   By: ohertzbe <ohertzbe@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:41:17 by ohertzbe          #+#    #+#             */
-/*   Updated: 2024/06/24 22:58:12 by ohertzbe         ###   ########.fr       */
+/*   Updated: 2024/06/25 01:39:20 by ohertzbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,29 @@
 
 Fixed::Fixed() {
     std::cout << "Default constructor called" << std::endl;
-    this->fixedpoint_value = 0;
+    this->fixedpoint = 0;
 }
 
 Fixed::Fixed(const int i) {
     std::cout << "Int constructor called" << std::endl;
-    this->fixedpoint_value = i;
+    this->fixedpoint = i;
 }
 
 Fixed::Fixed(const float f) {
     std::cout << "Float constructor called" << std::endl;
-    this->fixedpoint_value = f;
+    this->fixedpoint = f;
 }
 
 Fixed::Fixed(const Fixed& obj) {
     std::cout << "Copy constructor called" << std::endl;
-    this->fixedpoint_value = obj.fixedpoint_value;
+    this->fixedpoint = obj.fixedpoint;
 }
 
 Fixed& Fixed::operator=(const Fixed& obj) {
-    std::cout << "Copy assignement operator called" << std::endl;
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &obj) {
+        this->fixedpoint = obj.fixedpoint;
+    }
     return (*this);
 }
 
@@ -48,17 +51,17 @@ Fixed::~Fixed() {
 
  int     Fixed::getRawBits(void) const {
     std::cout << "getRawBits member function called" << std::endl;
-    return (this->fixedpoint_value);
+    return (this->fixedpoint);
  }
 
  
 void    Fixed::setRawBits(int const raw) {
     std::cout << "setRawBits member function called" << std::endl;
-    this->fixedpoint_value = raw;
+    this->fixedpoint = raw;
 }
 
 int     Fixed::toInt(void) const {
-    return (this->fixedpoint_value);
+    return (this->fixedpoint);
 }
 
 std::ostream& operator<<(std::ostream &out, const Fixed &obj) {
