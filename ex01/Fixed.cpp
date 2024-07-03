@@ -6,7 +6,7 @@
 /*   By: ohertzbe <ohertzbe@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:41:17 by ohertzbe          #+#    #+#             */
-/*   Updated: 2024/07/03 12:35:48 by ohertzbe         ###   ########.fr       */
+/*   Updated: 2024/07/03 12:43:36 by ohertzbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ Fixed::Fixed() {
 
 Fixed::Fixed(const int i) {
     std::cout << "Int constructor called" << std::endl;
-    this->fixedpoint = i * (1 << this->scale);
+    this->fixedpoint = i << this->scale;
 }
-// 42.42f
+
 Fixed::Fixed(const float f) {
     std::cout << "Float constructor called" << std::endl;
     this->fixedpoint = f * ((float)(1 << this->scale));
