@@ -6,7 +6,7 @@
 /*   By: ohertzbe <ohertzbe@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/24 19:41:19 by ohertzbe          #+#    #+#             */
-/*   Updated: 2024/06/25 01:24:13 by ohertzbe         ###   ########.fr       */
+/*   Updated: 2024/07/03 12:16:59 by ohertzbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Fixed {
 
     private:
-        static const int bits = 8;
+        static const int scale = 8;
         int              fixedpoint;
     public:
         Fixed();
