@@ -6,7 +6,7 @@
 /*   By: ohertzbe <ohertzbe@student.hive.fi>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/03 15:01:55 by ohertzbe          #+#    #+#             */
-/*   Updated: 2024/07/04 14:25:20 by ohertzbe         ###   ########.fr       */
+/*   Updated: 2024/07/04 14:35:15 by ohertzbe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,11 @@ Fixed    Fixed::operator*(const Fixed& other) const {
 Fixed    Fixed::operator/(const Fixed& other) const {
     Fixed result;
     
-    result.setRawBits((this->fixedpoint << this->scale) / other.getRawBits());
+    if (other.getRawBits() == 0) {
+        std::cout << "Cannot divide by zero!" << std::endl;
+    }
+    else
+        result.setRawBits((this->fixedpoint << this->scale) / other.getRawBits());
     return (result);
 }
 
